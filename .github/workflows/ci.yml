@@ -3,10 +3,7 @@ on: push
 jobs:
   test:
     runs-on: ubuntu-latest
-    env:
-      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-go@v2
       - run: make test
-      - run: bash <(curl -s https://codecov.io/bash)
